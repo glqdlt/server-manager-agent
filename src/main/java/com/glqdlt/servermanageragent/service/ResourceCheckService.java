@@ -2,13 +2,14 @@ package com.glqdlt.servermanageragent.service;
 
 import com.glqdlt.servermanageragent.core.StorageCheck;
 import com.glqdlt.servermanageragent.model.DriveVO;
+import com.glqdlt.servermanageragent.model.MemoryVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class StorageCheckService {
+public class ResourceCheckService {
 
     @Autowired
     StorageCheck storageCheck;
@@ -24,5 +25,11 @@ public class StorageCheckService {
     public List<DriveVO> getDriveByList(List<String> paths) {
         return storageCheck.getDriveByList(paths);
     }
+
+    public List<MemoryVO> getMemoery() {
+        return storageCheck.getMemory();
+    }
+
+    ;
 
 }

@@ -1,14 +1,21 @@
 package com.glqdlt.servermanageragent.core;
 
 import com.glqdlt.servermanageragent.model.DriveVO;
+import com.glqdlt.servermanageragent.model.MemoryVO;
+import com.glqdlt.servermanageragent.utill.TerminalUtill;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class StorageCheckImpl implements StorageCheck {
+
+    private static final Logger log = LoggerFactory.getLogger(StorageCheckImpl.class);
+
     @Override
     public List<DriveVO> getDrives() {
 
@@ -70,4 +77,8 @@ public class StorageCheckImpl implements StorageCheck {
         return list;
     }
 
+    @Override
+    public List<MemoryVO> getMemory() {
+        return TerminalUtill.getInstance().getMemoery();
+    }
 }

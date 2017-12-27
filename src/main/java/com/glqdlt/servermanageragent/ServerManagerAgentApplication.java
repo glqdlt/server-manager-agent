@@ -1,7 +1,7 @@
 package com.glqdlt.servermanageragent;
 
 import com.glqdlt.servermanageragent.service.DriveInformationService;
-import com.glqdlt.servermanageragent.service.StorageCheckService;
+import com.glqdlt.servermanageragent.service.ResourceCheckService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class ServerManagerAgentApplication implements CommandLineRunner {
     private static Logger logger = LoggerFactory.getLogger(CommandLineRunner.class);
 
     @Autowired
-    StorageCheckService storageCheckService;
+    ResourceCheckService storageCheckService;
 
     @Autowired
     DriveInformationService driveInformationService;
@@ -27,11 +27,7 @@ public class ServerManagerAgentApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... strings) throws Exception {
-
-        storageCheckService.getDrives().forEach(x -> logger.info(x.toString()));
-        logger.info("=============");
-        storageCheckService.getDriveByList(driveInformationService.getInformtions()).forEach(x -> logger.info(x.toString()));
+    public void run(String... strings) {
 
     }
 }
