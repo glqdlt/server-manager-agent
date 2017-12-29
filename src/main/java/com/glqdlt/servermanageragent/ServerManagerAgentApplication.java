@@ -1,6 +1,5 @@
 package com.glqdlt.servermanageragent;
 
-import com.glqdlt.servermanageragent.service.DriveInformationService;
 import com.glqdlt.servermanageragent.service.ResourceCheckService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,9 +17,6 @@ public class ServerManagerAgentApplication implements CommandLineRunner {
 
     @Autowired
     ResourceCheckService storageCheckService;
-
-    @Autowired
-    DriveInformationService driveInformationService;
 
     public static void main(String[] args) {
         SpringApplication.run(ServerManagerAgentApplication.class, args);

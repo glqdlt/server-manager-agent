@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class HeartBeatController {
 
     @RequestMapping("/ping")
-    public ResponseEntity<Integer> pong() {
+    public ResponseEntity<?> echo() {
 
-        return new ResponseEntity<>(0, HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

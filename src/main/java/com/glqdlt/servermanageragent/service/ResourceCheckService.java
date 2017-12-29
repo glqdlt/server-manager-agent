@@ -14,22 +14,24 @@ public class ResourceCheckService {
     @Autowired
     StorageCheck storageCheck;
 
+    public List<String> getDriveHealth(String target){
+        return storageCheck.getDriveHealth(target);
+    }
+
     public List<DriveVO> getDrives() {
 
-        return storageCheck.getDrives();
+        return storageCheck.getDriveStatic();
     }
 
     public List<DriveVO> getDriveByPath(String path) {
         return storageCheck.getDriveByPath(path);
-    }
-    public List<DriveVO> getDriveByList(List<String> paths) {
-        return storageCheck.getDriveByList(paths);
     }
 
     public List<MemoryVO> getMemoery() {
         return storageCheck.getMemory();
     }
 
-    ;
+    public List<String> getIp() {return storageCheck.getIp();}
+
 
 }

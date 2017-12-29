@@ -11,8 +11,11 @@ public interface StorageCheck {
 
     List<DriveVO> getDriveByPath(String path);
 
-    List<DriveVO> getDriveByList(List<String> paths);
+    List<DriveVO> getDriveStatic();
 
     List<MemoryVO> getMemory();
 
+    List<String> getIp();
+
+    List<String> getDriveHealth(String target);
 }
